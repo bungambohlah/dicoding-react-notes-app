@@ -1,15 +1,13 @@
-export interface IFruit {
+export interface INoto {
+	id: number
 	name: string
-	image: {
-		author: {
-			name: string
-			url: string
-		}
-		color: string
-		url: string
-	}
-	metadata: {
-		name: string
-		value: string
-	}[]
+	title: string
+	body: string
+	archived: boolean
+	createdAt: string
+}
+
+export interface NotoListProperties {
+	noto: INoto
+	index: number
 }
