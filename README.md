@@ -1,10 +1,112 @@
 # Noto
 
-[![codecov](https://codecov.io/gh/wtchnm/Vitamin/branch/main/graph/badge.svg?token=H9BBAKGYI0)](https://codecov.io/gh/wtchnm/Vitamin) ![Test workflow](https://github.com/wtchnm/Vitamin/actions/workflows/test.yml/badge.svg) ![CodeQL workflow](https://github.com/wtchnm/Vitamin/actions/workflows/codeql-analysis.yml/badge.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/wtchnm/Vitamin.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wtchnm/Vitamin/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wtchnm/Vitamin.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wtchnm/Vitamin/context:javascript) [![Vitamin](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/etow1b&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/etow1b/runs) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/wtchnm/Vitamin/blob/main/LICENSE)
+just for information, Noto name inspired by japanese "Noto" means a note.
 
-Opinionated Vite starter template.
+## Dicoding - Membangun Aplikasi Catatan Menggunakan React
 
-## Features
+Project ini adalah Submission dari Aplikasi Catatan Menggunakan React.
+
+Link Dicoding: [disini](https://www.dicoding.com/academies/403)
+
+## Table of contents
+
+- [Noto](#noto)
+  - [Dicoding - Membangun Aplikasi Catatan Menggunakan React](#dicoding---membangun-aplikasi-catatan-menggunakan-react)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Screenshots](#screenshots)
+  - [Dicoding Criteria](#dicoding-criteria)
+    - [Kriteria Utama 1: Mampu Menampilkan Daftar Catatan](#kriteria-utama-1-mampu-menampilkan-daftar-catatan)
+    - [Kriteria Utama 2: Mampu Menambahkan Catatan](#kriteria-utama-2-mampu-menambahkan-catatan)
+    - [Kriteria Utama 3: Mampu Menghapus Catatan](#kriteria-utama-3-mampu-menghapus-catatan)
+    - [Kriteria Opsional 1: Terdapat Fitur Pencarian Catatan](#kriteria-opsional-1-terdapat-fitur-pencarian-catatan)
+    - [Kriteria Opsional 2: Terdapat Limit Karakter pada Input Judul Catatan](#kriteria-opsional-2-terdapat-limit-karakter-pada-input-judul-catatan)
+    - [Kriteria Opsional 3: Terdapat Fitur Arsip Catatan](#kriteria-opsional-3-terdapat-fitur-arsip-catatan)
+  - [Stack Technology Used](#stack-technology-used)
+  - [Getting started](#getting-started)
+  - [List Scripts or Commands](#list-scripts-or-commands)
+    - [Link](#link)
+  - [Developed By](#developed-by)
+  - [Thanks to](#thanks-to)
+
+## Overview
+
+Untuk bisa lulus dan mendapatkan sertifikat dari akademi ini, Anda harus mengerjakan tugas yakni membuat proyek “Aplikasi Catatan Pribadi” sesuai kriteria yang tertera. Tim Reviewer akan memeriksa pekerjaan Anda dan memberikan reviu pada proyek yang Anda buat.
+
+### Screenshots
+
+<img src="screenshots/desktop.png">
+<img src="screenshots/tablet.png" width=256>
+
+## Dicoding Criteria
+
+Buatlah aplikasi web menggunakan React yang dapat menambahkan dan menghapus catatan. Agar lebih jelasnya, berikut 3 kriteria utama pada “Aplikasi Catatan Pribadi” yang harus Anda buat.
+
+### Kriteria Utama 1: Mampu Menampilkan Daftar Catatan
+
+- Aplikasi harus mampu menampilkan daftar catatan dengan data awal (initial data) yang telah kami sediakan.
+- Memanfaatkan state component untuk menyimpan data catatan.
+- Menggunakan teknik array map untuk menampilkan daftar catatan.
+
+### Kriteria Utama 2: Mampu Menambahkan Catatan
+
+- Aplikasi harus mampu menambahkan data catatan baru.
+- Memanfaatkan controlled component dalam membuat form input.
+- Data catatan disimpan cukup pada memori saja (akan hilang jika browser di-refresh).
+- Data catatan yang disimpan merupakan objek JavaScript dengan struktur berikut
+
+```javascript
+{
+  id: number | string,
+  title: string,
+  body: string,
+  archived: boolean,
+  createdAt: string,
+}
+```
+
+Berikut contoh data riilnya:
+
+```
+{
+  id: 1,
+  title: "Babel",
+  body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
+  archived: false,
+  createdAt: '2022-04-14T04:27:34.572Z'
+},
+```
+
+Catatan:
+Untuk id pada tiap catatan yang disimpan haruslah unik. Tips dalam menetapkan nilai untuk adalah Anda bisa memanfaatkan nilai timestamp. Untuk mendapatkan nilai timestamp di JavaScript cukup mudah, cukup dengan menuliskan expressions +new Date().
+
+### Kriteria Utama 3: Mampu Menghapus Catatan
+
+- Aplikasi harus menyediakan tombol hapus untuk menghapus data catatan yang disimpan.
+- Terdapat conditional rendering di mana bila tidak terdapat data catatan, maka UI menampilkan pesan “Tidak ada catatan” atau pesan apa pun yang mengindikasikan data catatan kosong.
+
+Selain kriteria utama, terdapat kriteria opsional yang yang dapat Anda penuhi agar mendapat nilai yang lebih tinggi.
+
+### Kriteria Opsional 1: Terdapat Fitur Pencarian Catatan
+
+- Aplikasi memiliki fitur pencarian catatan berdasarkan kata kunci yang dimasukkan, dengan ketentuan:
+  - Jika kolom pencarian tidak kosong, maka aplikasi hanya menampilkan daftar catatan yang judulnya mengandung kata kunci yang dimasukkan.
+  - Jika kolom pencariannya kosong, maka aplikasi menampilkan seluruh catatan.
+- Memanfaatkan controlled component dalam membangun fitur catatan.
+
+### Kriteria Opsional 2: Terdapat Limit Karakter pada Input Judul Catatan
+
+- Aplikasi dapat mencegah pengguna untuk memberikan judul catatan lebih dari 50 karakter.
+- Menggunakan state dalam melimitasi, bukan atribut maxlength.
+- Menampilkan jumlah karakter tersisa yang dapat digunakan oleh pengguna.
+
+### Kriteria Opsional 3: Terdapat Fitur Arsip Catatan
+
+- Aplikasi memiliki fitur arsip catatan.
+- Aplikasi harus menyediakan tombol arsipkan/pindahkan untuk mengarsipkan atau memindahkan catatan dari arsip.
+- Daftar catatan yang diarsip harus ditampilkan pada tempat terpisah dari catatan yang tidak diarsip.
+
+## Stack Technology Used
 
 - [Vite](https://vitejs.dev) with [React](https://reactjs.org), [TypeScript](https://www.typescriptlang.org) and [absolute imports](https://github.com/aleclarson/vite-tsconfig-paths).
 - [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms) and a [Prettier plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) that automatically sorts classes.
@@ -17,30 +119,27 @@ Opinionated Vite starter template.
 
 ## Getting started
 
-Use this repository as a [GitHub template](https://github.com/wtchnm/Vitamin/generate) or use [degit](https://github.com/Rich-Harris/degit) to clone to your machine with an empty git history:
+Clone this repo to your machine:
 
-```
-npx degit wtchnm/Vitamin#main my-app
+- Install pnpm first if you doesn't have pnpm
+
+```sh
+npm i -g pnpm
 ```
 
-Then, install the dependencies:
+- Then, install the dependencies:
 
-```
+```sh
 pnpm install
 ```
 
-### Before you start coding
+- Run the projects
 
-- [ ] If you don't plan to use GitHub Actions, delete the `.github` directory.
-- [ ] Clean up the `cypress/integration/index.spec.ts` file.
-- [ ] Change the `favicon.png`, `apple-touch-icon.png`, `android-chrome-192x192.png` and `android-chrome-512x512.png`. [favicon.io](https://favicon.io) is a cool tool for generating these assets.
-- [ ] In the `src` folder, remove the `__tests__`, `api` and `components` folder and the `types.ts` file.
-- [ ] If you don't plan to use `react-query`, remove the query client logic in the `main.tsx` file.
-- [ ] Change the title, description and theme color in the `index.html` and `vite.config.ts`. The [Inter](https://rsms.me/inter/) font is included, so remove it if you want.
-- [ ] Modify or delete the `LICENSE` file.
-- [ ] Change the `name` field in package.json.
+```sh
+pnpm dev
+```
 
-## Scripts
+## List Scripts or Commands
 
 - `pnpm dev` - start a development server with hot reload.
 - `pnpm build` - build for production. The generated files will be on the `dist` folder.
@@ -52,3 +151,17 @@ pnpm install
 - `pnpm format` - format all files with Prettier.
 - `pnpm lint` - runs TypeScript, ESLint and Stylelint.
 - `pnpm validate` - runs `lint`, `test:ci` and `test:e2e:ci`.
+
+### Link
+
+visit at ([note.afif.dev](https://note.afif.dev/))
+
+## Developed By
+
+Developed by me (Afif Abdillah Jusuf), visit my web at [afif.dev](https://afif.dev) for more contact information
+
+## Thanks to
+
+Dicoding. ([dicoding.com](https://dicoding.com))
+
+Jadilah developer expert menggunakan kurikulum standar internasional dari principal technology owner seperti Google, Microsoft, AWS, IBM, dan LINE

@@ -1,3 +1,5 @@
+import type React from 'react'
+
 export interface InputProperties {
 	id: string
 	label: string
