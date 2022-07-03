@@ -11,7 +11,7 @@ export default function Noto({
 
 	if (noto)
 		return (
-			<div className='relative flex h-full w-full select-none flex-col gap-4 overflow-hidden rounded-lg bg-slate-900 p-4 shadow-lg focus:border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50 dark:shadow-2xl md:p-6'>
+			<div className='relative flex h-full w-full select-none flex-col gap-4 overflow-hidden rounded-lg bg-slate-900 p-4 shadow-2xl focus:border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50 md:p-6'>
 				{/* card header */}
 				<header className='text-xl font-extrabold'>{noto.title}</header>
 				<p>{noto.body}</p>

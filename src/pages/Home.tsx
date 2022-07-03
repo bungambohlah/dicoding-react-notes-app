@@ -60,16 +60,12 @@ export default function Home(): ReactElement {
 								<p
 									id='helper-text-explanation'
 									className={`mt-2 text-sm ${
-										titleCharLeft < 1 ? `text-rose-500 dark:text-rose-400` : ``
+										titleCharLeft < 1 ? `text-rose-400` : ``
 									} ${
 										titleCharLeft >= 1 && titleCharLeft < 15
-											? `text-amber-500 dark:text-amber-400`
+											? `text-amber-400`
 											: ``
-									}${
-										titleCharLeft >= 15
-											? `text-gray-500 dark:text-gray-400`
-											: ``
-									}`}
+									}${titleCharLeft >= 15 ? `text-gray-400` : ``}`}
 								>
 									{titleCharLeft < 1
 										? `Max character exceeds`
@@ -138,8 +134,8 @@ export default function Home(): ReactElement {
 					noDataMessage='Archived Notes is empty :('
 				/>
 			</main>
-			<footer className='flex items-center justify-center rounded-lg bg-white p-4 p-6 shadow dark:bg-gray-800'>
-				<span className='text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
+			<footer className='flex items-center justify-center rounded-lg  bg-gray-800 p-6 shadow'>
+				<span className='text-sm text-gray-400 sm:text-center'>
 					© {new Date().getFullYear()}{' '}
 					<a href='https://afif.dev/' className='hover:underline'>
 						Made with <span className='text-rose-500'>♥</span> by Afif Abdillah

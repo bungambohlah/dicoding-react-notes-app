@@ -25,7 +25,7 @@ export default function NotosSection({
 				</div>
 			) : undefined}
 			{(notes && notes.length === 0) || !notes ? (
-				<span className='text-md m-4 flex flex-auto items-center text-gray-500 dark:text-gray-400 sm:text-center'>
+				<span className='text-md m-4 flex flex-auto items-center text-gray-400 sm:text-center'>
 					{noDataMessage ?? `Data is empty :(`}
 				</span>
 			) : undefined}
